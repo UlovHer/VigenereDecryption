@@ -49,9 +49,9 @@ function [de_str,dif_char]=group_frequency(ciphertext,letter,key_len)
     %分别将所有出现过的字符：char,每个char出现的次数：number,每个char出现的频率：frequency
     %输出到名字分别为:(char.xls、number.xls、frequency.xls)的Excel文件中
     %excel文件创建在matlab根目录result文件夹下，写入A1列
-    xlswrite('./result/v_char.xls',dif_char);
-    xlswrite('./result/v_number.xls',number);
-    xlswrite('./result/v_frequency.xls',frequency);
+    xlswrite('../result/v_char.xls',dif_char);
+    xlswrite('../result/v_number.xls',number);
+    xlswrite('../result/v_frequency.xls',frequency);
 
     % % 计算互重合指数
     % for i=1:key_len
@@ -88,7 +88,7 @@ function [de_str,dif_char]=group_frequency(ciphertext,letter,key_len)
             %结果存入矩阵t为计数索引
         end
     end
-    save('./result/data.mat');
+    save('../result/data.mat');
 end
 
 

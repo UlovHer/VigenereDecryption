@@ -1,6 +1,6 @@
 clc;
 clear all;
-ciphertext=read_ciphertext('ciphertext.txt',1)
+ciphertext=read_ciphertext('../ciphertext/ciphertext.txt',1)
 % ciphertext='KCCPKBGUFDPHQTYAVINRRTMVGRKDNBVFDETDGILTXRGUDDKOTFMBPVGEGLTGCKQRACQCWDNAWCRXIZAKFTLEWRPTYCQKYVXCHKFTPONCQQRHJVAJUWETMCMSPKQDYHJVDAHCTRLSVSKCGCZQQDZXGSFRLSWCWSJTBHAFSIASPRJAHKJRJUMVGKMITZHFPDISPZLVLGWTFPLKKEBDPGCEBSHCTJRWXBAFSPEZQNRWXCVYCGAONWDDKACKAWBBIKFTIOVKCGGHJVLNHIFFSQESVYCLACNVRWBBIREPBBVFEXOSCDYGZWPFDTKFQIYCWHJVLNHIQIBTKHJVNPIST';
 letter='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 %密文长度为length
@@ -18,7 +18,8 @@ coincidence_index=cal_coincidence_index(de_str,dif_char,nlf,key_len);
 %确定秘钥,根据向量之间的夹角来确定
 key=search_key(coincidence_index,key_len);
 %确定明文
-plaintext=get_plaintext(ciphertext,key,key_len)
+plaintext=get_plaintext(ciphertext,ciphertext_len,key,key_len)
+write_plaintext(plaintext,'../plaintext/plaintext.txt')
 
 
 
